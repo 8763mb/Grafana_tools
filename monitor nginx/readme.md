@@ -2,6 +2,9 @@
 
 This guide provides step-by-step instructions for setting up the NGINX Prometheus Exporter to monitor your NGINX instances.
 
+## Download NGINX Prometheus Exporter
+https://github.com/nginx/nginx-prometheus-exporter
+
 ## Installation
 
 ```bash
