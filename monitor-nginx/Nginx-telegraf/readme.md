@@ -144,6 +144,10 @@ systemctl reset-failed telegraf.service
 systemctl daemon-reload
 ```
 
+## Grafana dashboard exmaple
+<img width="937" alt="image" src="https://github.com/user-attachments/assets/1fff4833-89da-4641-bd0d-9d69cf65a44c" />
+
+
 ## Collected Metrics
 
 This setup collects the following metrics:
