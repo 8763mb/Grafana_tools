@@ -57,7 +57,7 @@ monitor-nginx/
 - 輕量級監控需求
 - 更簡單的配置需求
 
-### 選項 2：Telegraf 代理
+### 選項 2：Telegraf
 
 用於全面的系統和 NGINX 監控：
 
@@ -93,8 +93,8 @@ monitor-nginx/
 - 用於指標收集的 Prometheus 伺服器
 - 用於視覺化的 Grafana
 - 以下之一：
-  - NGINX Prometheus Exporter（二進位檔）
-  - Telegraf 代理（建議版本 1.33.1+）
+  - NGINX Prometheus Exporter
+  - Telegraf
 
 ## 快速入門
 
