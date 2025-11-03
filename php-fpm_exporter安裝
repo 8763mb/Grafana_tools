@@ -1,0 +1,27 @@
+curl -L https://github.com/hipages/php-fpm_exporter/releases/download/v2.2.0/php-fpm_exporter_2.2.0_linux_amd64.tar.gz -o php-fpm_exporter.tgz
+tar xzf php-fpm_exporter.tgz
+sudo mv php-fpm_exporter /usr/local/bin/
+sudo chmod +x /usr/local/bin/php-fpm_exporter
+
+vim /etc/systemd/system/php-fpm_exporter.service
+[Unit]
+Description=PHP-FPM Exporter for Prometheus
+After=network.target
+
+[Service]
+User=nobody
+Group=nobody
+Type=simple
+ExecStart=/usr/local/bin/php-fpm_exporter server \
+  --web.listen-address=":9253" \
+  --web.telemetry-path="/metrics" \
+  --phpfpm.scrape-uri="tcp://127.0.0.1:9000/status"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+-------------------
+刪除:
+sudo systemctl stop php-fpm_exporter || true
+sudo rm -f /usr/local/bin/php-fpm_exporter
